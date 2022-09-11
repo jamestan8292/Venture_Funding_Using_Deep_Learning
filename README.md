@@ -14,30 +14,27 @@ Tensorflow with Keras is used for deep learning process. Four approaches, by var
 After pre-processing, the dataframe has 116 features and one target. Five neural network models were tested. The following were the accuracies achieved for the five models:
 
 * Original Model: Two hidden layers, with the first layer with the number of nodes equals to half the number of features, and the second layer having half the number of nodes of the first layer. The RELU activation function is used for the hidden layers. The model was run for 50 epochs.
-  * Accuracy = 72.7%
-
-* Alternate Model 1: Same parameters as the Original Model, with the model run for 100 epochs.
   * Accuracy = 73.0%
 
-* Alternate Model 2: Two hidden layers, with the first layer with the number of nodes equals to twice the number of features, and the second layer having twice the number of nodes of the first layer. The model was run for 50 epochs.
-  * Accuracy = 73.0%
+* Alternate Model 1: One hidden layer, with the hidden layer with the number of nodes equals to half the number of features. The model run for 50 epochs.
+  * Accuracy = 73.1%
+
+* Alternate Model 2: One hidden layer, with the hidden layer with the number of nodes equals to twice the number of features. The model was run for 50 epochs.
+  * Accuracy = 73.2%
 
 * Alternate Model 3: Same parameters as Alternate Model 2, with the SELU activation function used for the hidden layers in place of the RELU function. The model was run for 50 epochs.
-  * Accuracy = 72.9%
-
-* Alternate Model 4: Same parameters as the Original Model, with one additional hidden layer. The model was run for 50 epochs.
   * Accuracy = 73.0%
+
 
 
 ## Observations with this Dataset
 
-1. For the same model, increasing the number of epochs marginally improved the accuracy (Original Model vs Alternate Model 1)
+1. Using one instead of two layers, with the same 50 epochs, improved the accuracy (Original Model vs Alternate Model 1). Having more than one layer in this case may be a sign of oversampling.
 
-2. Increasing the number of nodes only show a marginal improvement in accuracy (Alternate Model 2 vs Original Model), and no improvement in accuracy with higher number of epochs versus increasing number of nodes.
+2. Increasing the number of nodes showed a little improvement in accuracy (Alternate Model 2 vs Alternate Model 1). Alternate Model 1 run faster because it has less number of nodes. 
 
-3. The RELU activation function performed marginally better than the SELU function (Alternate Model 2 vs Alternate Model 3)
+3. The RELU activation function performed slightly better than the SELU function (Alternate Model 2 vs Alternate Model 3).
 
-4. Adding an additiona layer showed a marginal accuracy improvement (Alternate Model 4 vs Original Model)
 
 ---
 
